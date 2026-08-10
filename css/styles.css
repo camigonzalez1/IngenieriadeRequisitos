@@ -1,311 +1,791 @@
-:root{
-  /* Paleta de beiges y greiges */
-  --beige-1:#F6F2E9;      /* fondo general */
-  --beige-2:#EDE6D6;      /* tarjetas / superficies */
-  --greige-1:#DFD5BF;     /* líneas de grilla, separadores marcados */
-  --greige-2:#B9AD94;     /* detalles, hover sutil */
+:root {
+  /* ===== PALETA ===== */
+  --beige-1: #F6F2E9;
+  --beige-2: #EDE6D6;
+  --greige-1: #DFD5BF;
+  --greige-2: #B9AD94;
 
-  /* Institucional UTN.BA */
-  --wine:#BA0A3E;         /* rojo/bordó oficial (extraído del isologotipo) */
-  --wine-dark:#8E0930;
-  --ink:#1A1712;          /* negro institucional (texto principal) */
-  --ink-soft:#6E6656;     /* gris-marrón para texto secundario */
-  --line:rgba(26,23,18,0.14);
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{
-  background:var(--beige-1);
-  color:var(--ink);
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight:bold; letter-spacing:-0.01em; }
-.mono{ font-family:Verdana, Geneva, Tahoma, sans-serif; }
-a{ color:inherit; text-decoration:none; }
-ul{ list-style:none; }
+  /* ===== INSTITUCIONAL UTN ===== */
+  --wine: #BA0A3E;
+  --wine-dark: #8E0930;
 
-/* ===== LOGO ===== */
+  /* ===== TEXTO ===== */
+  --ink: #1A1712;
+  --ink-soft: #6E6656;
+
+  /* ===== ESTRUCTURA ===== */
+  --line: rgba(26, 23, 18, 0.14);
+}
+
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--beige-1);
+  color: var(--ink);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-img {
-    max-height: 80px;
-    max-width: 100%;
-    object-fit: contain;
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
 }
 
-/* ===== HEADER ===== */
-header.top{ border-bottom:1px solid var(--line); background:var(--beige-1); }
-.top-inner{ max-width:1080px; margin:0 auto; padding:36px 24px 0; }
-.top-row{ display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:30px; }
-.top-row .eyebrow{
-  font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:12px; letter-spacing:.06em;
-  text-transform:uppercase; color:var(--wine); display:block; margin-bottom:10px; font-weight:bold;
-}
-.top-row h1{ font-size:clamp(26px,4vw,36px); line-height:1.1; }
 
-/* Tabs — underline minimal */
-.tabbar{ display:flex; gap:32px; }
-.tabbtn{
-  font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:12px; letter-spacing:.03em; text-transform:uppercase;
-  background:none; border:none; color:var(--ink-soft); cursor:pointer;
-  padding:0 0 16px; border-bottom:2px solid transparent; transition:color .15s, border-color .15s;
-}
-.tabbtn:hover{ color:var(--ink); }
-.tabbtn.active{ color:var(--ink); border-bottom-color:var(--wine); font-weight:bold; }
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-main{ max-width:1080px; margin:0 auto; padding:0 24px; }
-.panel{ display:none; padding:48px 0 90px; }
-.panel.active{ display:block; animation:fade .2s ease; }
-@keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
-
-.section-tag{
-  font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:11px; text-transform:uppercase;
-  letter-spacing:.06em; color:var(--wine); display:block; margin-bottom:10px; font-weight:bold;
-}
-h2.h{ font-size:22px; margin-bottom:18px; }
-h2.h.h-flush{ margin-bottom:0; }
-p.sub{ color:var(--ink-soft); font-size:14.5px; max-width:66ch; }
-p.sub.sub-spaced{ margin-bottom:36px; }
-
-/* ===== PRESENTACIÓN: equipo docente ===== */
-.equipo{ display:flex; gap:48px; flex-wrap:wrap; margin-bottom:52px; padding-bottom:40px; border-bottom:1px solid var(--line); }
-.persona .rol{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); margin-bottom:4px; }
-.persona .nombre{ font-size:15px; font-weight:bold; margin-bottom:2px; }
-.persona .mail{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:12px; color:var(--wine); }
-
-/* Pitch */
-.pitch{ font-size:18px; font-weight:bold; max-width:56ch; line-height:1.5; margin-bottom:52px; color:var(--ink); }
-
-.block{ margin-bottom:52px; }
-.block h3{ font-size:15.5px; margin-bottom:16px; }
-.simple-list li{
-  font-size:14px; color:var(--ink-soft); padding:9px 0 9px 20px; position:relative;
-  border-top:1px solid var(--line);
-}
-.simple-list li:first-child{ border-top:none; }
-.simple-list li::before{ content:'—'; position:absolute; left:0; color:var(--wine); }
-
-.checklist{ display:grid; grid-template-columns:1fr 1fr; gap:2px 32px; }
-.checklist li{ font-size:14px; padding:10px 0; display:flex; gap:10px; align-items:flex-start; border-top:1px solid var(--line); }
-.checklist li:nth-child(1), .checklist li:nth-child(2){ border-top:none; }
-.check{
-  width:16px; height:16px; border:1.5px solid var(--wine); border-radius:3px; flex:0 0 auto; margin-top:2px;
-  position:relative;
-}
-.check::after{
-  content:''; position:absolute; left:3px; top:0px; width:4px; height:8px;
-  border-right:1.5px solid var(--wine); border-bottom:1.5px solid var(--wine); transform:rotate(45deg);
+header.top {
+  background: var(--beige-1);
+  border-bottom: 1px solid var(--line);
 }
 
-/* Logística */
-.logistica{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:52px; }
-.log-card{ background:var(--beige-2); border:1px solid var(--line); border-radius:6px; padding:20px 22px; }
-.log-card .tag{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft); margin-bottom:8px; display:block; }
-.log-card .val{ font-size:14.5px; font-weight:bold; }
-.log-card a.btn{
-  display:inline-block; margin-top:10px; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:12px;
-  background:var(--wine); color:var(--beige-1); padding:7px 14px; border-radius:4px;
+.top-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 24px 0;
 }
-.log-card .hint{ font-size:11.5px; color:var(--ink-soft); margin-top:8px; }
-.dropzone{ border:1.5px dashed var(--greige-2); border-radius:4px; padding:12px; text-align:center; margin-top:10px; font-size:12px; color:var(--ink-soft); background:var(--beige-1); }
 
-/* Calendario embebido */
-.cal-embed{ border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--beige-2); }
-.cal-embed iframe{ display:block; width:100%; }
-.cal-note{ font-size:12px; color:var(--ink-soft); margin-top:10px; }
+.top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
 
-/* ===== EJES ===== */
+.top-row .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--wine);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.top-row h1 {
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.1;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.tabbar {
+  display: flex;
+  gap: 32px;
+}
+
+.tabbtn {
+  padding: 0 0 16px;
+
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+
+  color: var(--ink-soft);
+  cursor: pointer;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.tabbtn:hover {
+  color: var(--ink);
+}
+
+.tabbtn.active {
+  color: var(--ink);
+  border-bottom-color: var(--wine);
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   ESTRUCTURA GENERAL
+   ========================================================= */
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.panel {
+  display: none;
+  padding: 48px 0 90px;
+}
+
+.panel.active {
+  display: block;
+  animation: fade 0.2s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.block {
+  margin-bottom: 52px;
+}
+
+.section-tag {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--wine);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+h2.h {
+  margin-bottom: 18px;
+  font-size: 22px;
+}
+
+h2.h.h-flush {
+  margin-bottom: 0;
+}
+
+p.sub {
+  max-width: 66ch;
+
+  color: var(--ink-soft);
+  font-size: 14.5px;
+}
+
+p.sub.sub-spaced {
+  margin-bottom: 36px;
+}
+
+
+/* =========================================================
+   BIENVENIDA
+   ========================================================= */
+
+.bienvenida {
+  max-width: 780px;
+}
+
+.bienvenida p {
+  max-width: 70ch;
+  margin-bottom: 12px;
+
+  color: var(--ink-soft);
+  font-size: 14.5px;
+}
+
+.bienvenida p:last-child {
+  margin-bottom: 0;
+}
+
+.bienvenida strong {
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   ACCESOS RÁPIDOS
+   ========================================================= */
+
+.accesos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.btn {
+  display: inline-block;
+
+  padding: 10px 18px;
+
+  background: var(--beige-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+
+  color: var(--ink);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12.5px;
+  font-weight: bold;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--greige-1);
+  border-color: var(--greige-2);
+}
+
+.btn-primary {
+  background: var(--wine);
+  border-color: var(--wine);
+  color: var(--beige-1);
+}
+
+.btn-primary:hover {
+  background: var(--wine-dark);
+  border-color: var(--wine-dark);
+}
+
+
+/* =========================================================
+   LISTAS SIMPLES
+   ========================================================= */
+
+.simple-list li {
+  position: relative;
+
+  padding: 9px 0 9px 20px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.simple-list li:first-child {
+  border-top: none;
+}
+
+.simple-list li::before {
+  content: "—";
+
+  position: absolute;
+  left: 0;
+
+  color: var(--wine);
+}
+
+
+/* =========================================================
+   CHECKLIST
+   ========================================================= */
+
+.checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 32px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 10px 0;
+
+  border-top: 1px solid var(--line);
+
+  font-size: 14px;
+}
+
+.checklist li:nth-child(1),
+.checklist li:nth-child(2) {
+  border-top: none;
+}
+
+.check {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+
+  border: 1.5px solid var(--wine);
+  border-radius: 3px;
+}
+
+.check::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 3px;
+
+  width: 4px;
+  height: 8px;
+
+  border-right: 1.5px solid var(--wine);
+  border-bottom: 1.5px solid var(--wine);
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   EQUIPO DOCENTE
+   ========================================================= */
+
+.equipo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+
+  margin-bottom: 0;
+  padding-bottom: 40px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.persona .rol {
+  display: block;
+  margin-bottom: 4px;
+
+  color: var(--ink-soft);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.persona .nombre {
+  margin-bottom: 2px;
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.persona .mail {
+  color: var(--wine);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.persona .mail:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DE CURSADA
+   ========================================================= */
+
+.logistica {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.log-card {
+  padding: 20px 22px;
+
+  background: var(--beige-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.log-card .tag {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--ink-soft);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.log-card .val {
+  font-size: 14.5px;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   CRONOGRAMA
+   ========================================================= */
+
+.cronograma {
+  width: 100%;
+  margin-top: 20px;
+
+  background: var(--beige-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.cronograma iframe {
+  display: block;
+
+  width: 100%;
+  height: 600px;
+
+  border: 0;
+}
+
+.cal-suscripcion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-top: 16px;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--line);
+}
+
+.cal-suscripcion span {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.cal-suscripcion .btn {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CONTENIDOS / EJES
+   ========================================================= */
+
 .ejes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   width: 100%;
 }
-@media (max-width:820px){
-  .equipo{ gap:28px; }
-  .logistica{ grid-template-columns:1fr; }
-  .checklist{ grid-template-columns:1fr; }
-  .calif-grid{ grid-template-columns:1fr; }
-  .top-row{ flex-direction:column; }
-  .tabbar{ overflow-x:auto; gap:22px; }
+
+.eje-card {
+  padding: 26px 22px 22px;
+
+  background: var(--beige-2);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--greige-2);
+  border-radius: 8px;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-top-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.eje-card:hover {
+  background: var(--beige-1);
+  border-top-color: var(--wine);
+  box-shadow: 0 10px 24px rgba(26, 23, 18, 0.12);
+  transform: translateY(-4px);
+}
+
+.eje-card h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.eje-card ul li {
+  position: relative;
+
+  padding: 4px 0 4px 14px;
+
+  color: var(--ink-soft);
+  font-size: 12.5px;
+}
+
+.eje-card ul li::before {
+  content: "·";
+
+  position: absolute;
+  left: 0;
+
+  color: var(--ink-soft);
+}
+
+.biblio {
+  margin-top: 14px;
+  padding-top: 12px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--ink-soft);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10.5px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TP INTEGRADOR
+   ========================================================= */
+
+.tp-hidden-state {
+  padding: 70px 20px;
+
+  border: 1px dashed var(--greige-2);
+  border-radius: 8px;
+
+  color: var(--ink-soft);
+
+  text-align: center;
+}
+
+.tp-hidden-state .em {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--wine);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tp-hidden-state h3 {
+  margin-bottom: 8px;
+
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.tp-hidden-state p {
+  max-width: 44ch;
+  margin: 0 auto;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   CALIFICACIONES
+   ========================================================= */
+
+.evaluacion-nota {
+  padding: 20px 24px;
+
+  background: var(--beige-2);
+  border-left: 3px solid var(--wine);
+  border-radius: 0 6px 6px 0;
+}
+
+.evaluacion-nota h3 {
+  margin-bottom: 10px;
+  font-size: 15.5px;
+}
+
+.evaluacion-nota p {
+  max-width: 70ch;
+
+  color: var(--ink-soft);
+  font-size: 13.5px;
+}
+
+.evaluacion-nota a {
+  color: var(--wine);
+  font-weight: bold;
+}
+
+.evaluacion-nota a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--ink-soft);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .top-row {
+    flex-direction: column;
+  }
+
+  .tabbar {
+    gap: 22px;
+    overflow-x: auto;
+  }
+
+  .equipo {
+    gap: 28px;
+  }
+
+  .logistica {
+    grid-template-columns: 1fr;
+  }
+
+  .checklist {
+    grid-template-columns: 1fr;
+  }
 
   .ejes {
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .accesos-grid {
+    flex-direction: column;
+  }
+
+  .accesos-grid .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cal-suscripcion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cronograma iframe {
+    height: 500px;
   }
 }
-.eje-card{
-  background:var(--beige-2); padding:26px 22px 22px; border-radius:8px;
-  border:1px solid var(--line); border-top:3px solid var(--greige-2);
-  transition:transform .18s ease, box-shadow .18s ease, border-top-color .18s ease, background .18s ease;
-}
-.eje-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 24px rgba(26,23,18,0.12);
-  border-top-color:var(--wine);
-  background:var(--beige-1);
-}
-.eje-card .n{
-  font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:12px; color:var(--beige-1); display:flex;
-  align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%;
-  background:var(--wine); margin-bottom:14px; font-weight:bold; transition:transform .18s ease;
-}
-.eje-card:hover .n{ transform:scale(1.12); }
-.eje-card h3{ font-size:16px; margin-bottom:12px; }
-.eje-card ul li{ font-size:12.5px; color:var(--ink-soft); padding:4px 0 4px 14px; position:relative; }
-.eje-card ul li::before{ content:'·'; position:absolute; left:0; color:var(--ink-soft); }
-.biblio{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:10.5px; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:12px; margin-top:14px; line-height:1.7; }
 
-/* ===== TP INTEGRADOR (toggle) ===== */
-.tp-toggle-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:32px; }
-.toggle{ display:flex; align-items:center; gap:10px; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:11.5px; color:var(--ink-soft); cursor:pointer; }
-.switch{ width:38px; height:20px; border-radius:20px; background:var(--greige-1); position:relative; transition:background .15s; }
-.switch::after{ content:''; position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:50%; background:var(--beige-1); box-shadow:0 1px 2px rgba(0,0,0,.2); transition:left .15s; }
-.switch.on{ background:var(--wine); }
-.switch.on::after{ left:20px; }
 
-.tp-content-hidden{ display:none; }
+@media (max-width: 520px) {
 
-.tp-hidden-state{ text-align:center; padding:70px 20px; border:1px dashed var(--greige-2); border-radius:8px; color:var(--ink-soft); }
-.tp-hidden-state .em{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--wine); margin-bottom:10px; display:block; font-weight:bold; }
-.tp-hidden-state h3{ font-size:17px; color:var(--ink); margin-bottom:8px; }
-.tp-hidden-state p{ font-size:13px; max-width:44ch; margin:0 auto; }
+  .top-inner {
+    padding: 28px 18px 0;
+  }
 
-.caso-box{ background:var(--beige-2); border-left:3px solid var(--wine); padding:22px 26px; margin-bottom:40px; border-radius:0 6px 6px 0; }
-.caso-box .tag{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:11px; color:var(--wine); text-transform:uppercase; letter-spacing:.05em; font-weight:bold; }
-.caso-box h3{ font-size:18px; margin:8px 0 8px; }
-.caso-box p{ font-size:13.5px; color:var(--ink-soft); max-width:70ch; }
+  main {
+    padding: 0 18px;
+  }
 
-.etapas{ display:grid; grid-template-columns:repeat(auto-fill, minmax(210px,1fr)); gap:14px; }
-.etapa{
-  background:var(--beige-2); padding:18px 18px 16px; font-size:13px; border-radius:8px;
-  border:1px solid var(--line); position:relative; overflow:hidden;
-  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-}
-.etapa::before{
-  content:''; position:absolute; top:0; left:0; height:100%; width:3px; background:var(--greige-2);
-  transition:background .18s ease, width .18s ease;
-}
-.etapa:hover{ transform:translateY(-4px); box-shadow:0 10px 22px rgba(26,23,18,0.12); background:var(--beige-1); }
-.etapa:hover::before{ background:var(--wine); width:4px; }
-.etapa .step{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:10.5px; color:var(--wine); display:block; margin-bottom:6px; font-weight:bold; letter-spacing:.03em; text-transform:uppercase; }
-.etapa h4{ font-size:14px; margin-bottom:6px; line-height:1.25; }
-.etapa p{ color:var(--ink-soft); font-size:12px; }
-.etapa .fecha{ font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:10.5px; margin-top:10px; display:block; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:8px; }
+  .panel {
+    padding-top: 36px;
+    padding-bottom: 60px;
+  }
 
-/* ===== CALIFICACIONES ===== */
-.calif-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--greige-1); border:1px solid var(--greige-1); }
-.calif-card{ background:var(--beige-1); padding:26px 24px; }
-.calif-card h3{ font-size:15.5px; margin-bottom:14px; }
-.calif-card li{ font-size:13px; color:var(--ink-soft); padding:7px 0 7px 16px; position:relative; border-top:1px solid var(--line); }
-.calif-card li:first-child{ border-top:none; }
-.calif-card li::before{ content:'—'; position:absolute; left:0; color:var(--wine); }
+  .top-row h1 {
+    font-size: 28px;
+  }
 
-footer{
-  max-width:1080px; margin:0 auto; padding:28px 24px 60px;
-  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:11px; color:var(--ink-soft);
-  border-top:1px solid var(--line);
-}
+  .tabbar {
+    gap: 18px;
+  }
 
-@media (max-width:820px){
-  .equipo{ gap:28px; }
-  .logistica{ grid-template-columns:1fr; }
-  .checklist{ grid-template-columns:1fr; }
-  .calif-grid{ grid-template-columns:1fr; }
-  .top-row{ flex-direction:column; }
-  .tabbar{ overflow-x:auto; gap:22px; }
-}
-:focus-visible{ outline:2px solid var(--wine); outline-offset:2px; }/* ===== BOTÓN GENÉRICO (reutilizable fuera de .log-card) ===== */
-.btn{
-  display:inline-block;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size:12.5px;
-  font-weight:bold;
-  background:var(--beige-2);
-  color:var(--ink);
-  border:1px solid var(--line);
-  padding:10px 18px;
-  border-radius:4px;
-  transition:background .15s, border-color .15s, transform .15s;
-}
-.btn:hover{
-  background:var(--greige-1);
-  border-color:var(--greige-2);
-}
-.btn-primary{
-  background:var(--wine);
-  color:var(--beige-1);
-  border-color:var(--wine);
-}
-.btn-primary:hover{
-  background:var(--wine-dark);
-  border-color:var(--wine-dark);
-}
+  .tabbtn {
+    font-size: 11px;
+  }
 
-/* ===== BIENVENIDA ===== */
-.bienvenida p{
-  font-size:14.5px;
-  color:var(--ink-soft);
-  max-width:70ch;
-  margin-bottom:12px;
-}
-.bienvenida p:last-child{ margin-bottom:0; }
-.bienvenida strong{ color:var(--ink); }
+  .block {
+    margin-bottom: 42px;
+  }
 
-/* ===== ACCESOS RÁPIDOS ===== */
-.accesos-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-.accesos-grid .btn{ text-align:center; }
+  .cronograma iframe {
+    height: 450px;
+  }
 
-@media (max-width:820px){
-  .accesos-grid{ flex-direction:column; }
-  .accesos-grid .btn{ width:100%; text-align:center; }
+  footer {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
 }
-
-/* ===== SUSCRIPCIÓN AL CALENDARIO (dentro de Cronograma) ===== */
-.cal-suscripcion{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:14px;
-  padding-top:14px;
-  border-top:1px solid var(--line);
-}
-.cal-suscripcion-txt{
-  font-size:13px;
-  color:var(--ink-soft);
-}
-.cal-suscripcion .btn{
-  font-size:12px;
-  padding:8px 16px;
-  white-space:nowrap;
-}
-
-@media (max-width:820px){
-  .cal-suscripcion{ flex-direction:column; align-items:flex-start; }
-}
-
-/* ===== NOTA DE EVALUACIÓN ===== */
-.evaluacion-nota{
-  background:var(--beige-2);
-  border-left:3px solid var(--wine);
-  padding:20px 24px;
-  border-radius:0 6px 6px 0;
-}
-.evaluacion-nota h3{ font-size:15.5px; margin-bottom:10px; }
-.evaluacion-nota p{
-  font-size:13.5px;
-  color:var(--ink-soft);
-  max-width:70ch;
-}
-.evaluacion-nota strong{ color:var(--ink); }
