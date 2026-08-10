@@ -487,21 +487,24 @@ p.sub.sub-spaced {
    ========================================================= */
 
 .cronograma {
+  position: relative;
   width: 100%;
+  height: 620px;
   margin-top: 20px;
 
   background: var(--beige-2);
   border: 1px solid var(--line);
   border-radius: 8px;
 
-  overflow: hidden;
+  overflow: auto;
 }
 
 .cronograma iframe {
   display: block;
 
   width: 100%;
-  height: 600px;
+  min-width: 900px;
+  height: 620px;
 
   border: 0;
 }
