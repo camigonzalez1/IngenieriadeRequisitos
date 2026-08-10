@@ -1,107 +1,457 @@
-<!-- ===== PRESENTACIÓN ===== -->
-<section class="panel active" id="presentacion">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 1. Bienvenida -->
-  <div class="block bienvenida">
-    <h3>Bienvenida</h3>
-    <p>
-      Ingeniería de Requisitos es la materia en la que vas a aprender a relevar, analizar
-      y documentar los requisitos de un sistema antes de construirlo: identificar stakeholders,
-      elicitar información y describirla con precisión usando casos de uso, LEL y escenarios.
-    </p>
-    <p>
-      El <strong>Campus Virtual</strong> es el canal oficial de la materia: ahí se gestionan
-      las entregas, los trabajos prácticos y las actividades de la cursada. Esta página web
-      es un <strong>complemento</strong> para cuestiones administrativas y de organización
-      (cronograma, accesos rápidos, programa, etc.).
-    </p>
-  </div>
+  <title>Ingeniería de Requisitos K3061 — UTN FRBA</title>
 
-  <!-- 2. Accesos rápidos -->
-  <div class="block accesos-rapidos">
-    <h3>Accesos rápidos</h3>
-    <div class="accesos-grid">
-      <a class="btn btn-primary" href="https://utn.zoom.us/j/85446222949?pwd=eGNUendrckpsanhWcXlmZjJXNGxPdz09" target="_blank" rel="noopener">
-        Unirse a la clase (Zoom) ↗
-      </a>
-      <a class="btn" href="https://aulasvirtuales.frba.utn.edu.ar/course/view.php?id=29996&section=0" target="_blank" rel="noopener">
-        Campus Virtual ↗
-      </a>
-      <a class="btn" href="/images/INGENIERIA-DE-REQUISITOS.pdf" target="_blank" rel="noopener">
-        Programa de la materia ↗
-      </a>
-    </div>
-  </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- 3. ¿Qué vas a aprender? (único bloque de competencias, sin duplicar) -->
-  <div class="block">
-    <h3>¿Qué vas a aprender?</h3>
-    <ul class="simple-list">
-      <li>Analizar un proceso de negocio</li>
-      <li>Identificar stakeholders</li>
-      <li>Elicitar requisitos utilizando distintas técnicas</li>
-      <li>Diferenciar requisitos funcionales y no funcionales</li>
-      <li>Documentar requisitos mediante distintas herramientas</li>
-      <li>Justificar decisiones de análisis</li>
-      <li>Mantener trazabilidad durante el proyecto</li>
-    </ul>
-  </div>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
 
-  <!-- 5. Equipo docente (después de la info de orientación, no primero) -->
-  <div class="block">
-    <h3>Equipo docente</h3>
-    <div class="equipo">
-      <div class="persona">
-        <span class="rol">Titular</span>
-        <div class="nombre">Ing. Laura Varela</div>
-        <div class="mail">lauravarela@frba.utn.edu.ar</div>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="top">
+    <div class="top-inner">
+
+      <div class="top-row">
+
+        <div>
+          <span class="eyebrow">K3061 · UTN FRBA · 2C 2026</span>
+          <h1>Ingeniería de Requisitos</h1>
+        </div>
+
+        <div class="logo">
+          <img
+            src="images/logo-utn-frba.png"
+            alt="UTN Facultad Regional Buenos Aires"
+            class="logo-img"
+          >
+        </div>
+
       </div>
-      <div class="persona">
-        <span class="rol">Ayudante</span>
-        <div class="nombre">Camila González</div>
-        <div class="mail">camigonzalez@frba.utn.edu.ar</div>
+
+      <nav class="tabbar" id="tabbar" aria-label="Navegación principal">
+        <button class="tabbtn active" data-tab="presentacion">
+          Presentación
+        </button>
+
+        <button class="tabbtn" data-tab="ejes">
+          Contenidos
+        </button>
+
+        <button class="tabbtn" data-tab="tp">
+          TP Integrador
+        </button>
+
+        <button class="tabbtn" data-tab="calif">
+          Calificaciones
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         PRESENTACIÓN
+         ========================================================= -->
+    <section class="panel active" id="presentacion">
+
+      <!-- Bienvenida -->
+      <section class="bienvenida block">
+
+        <span class="section-tag">Bienvenidos</span>
+
+        <h2 class="h">Ingeniería de Requisitos</h2>
+
+        <p>
+          En esta materia vas a aprender a comprender las necesidades de un
+          negocio, relevar información y transformar esas necesidades en
+          requisitos que puedan ser documentados, validados y utilizados
+          durante el desarrollo de un sistema.
+        </p>
+
+        <p>
+          Esta página reúne la información general de la materia y los
+          accesos que vas a necesitar durante la cursada.
+          <strong>Las entregas, trabajos prácticos y actividades se gestionan
+          a través del Campus Virtual.</strong>
+        </p>
+
+      </section>
+
+
+      <!-- Accesos rápidos -->
+      <section class="block">
+
+        <h3>Accesos rápidos</h3>
+
+        <div class="accesos-grid">
+
+          <a
+            class="btn btn-primary"
+            href="https://utn.zoom.us/j/85446222949?pwd=eGNUendrckpsanhWcXlmZjJXNGxPdz09"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Unirse a la clase ↗
+          </a>
+
+          <a
+            class="btn"
+            href="https://aulasvirtuales.frba.utn.edu.ar/course/view.php?id=29996&section=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Campus Virtual ↗
+          </a>
+
+          <a
+            class="btn"
+            href="/images/INGENIERIA-DE-REQUISITOS.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Programa de la materia ↗
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- ¿Qué vas a aprender? -->
+      <section class="block">
+
+        <h3>¿Qué vas a aprender?</h3>
+
+        <ul class="simple-list">
+
+          <li>
+            Comprender el negocio, sus procesos y su contexto.
+          </li>
+
+          <li>
+            Identificar usuarios, clientes y otros stakeholders.
+          </li>
+
+          <li>
+            Elicitar necesidades mediante distintas técnicas de relevamiento.
+          </li>
+
+          <li>
+            Definir y diferenciar requisitos funcionales y no funcionales.
+          </li>
+
+          <li>
+            Modelar y documentar requisitos mediante distintas herramientas.
+          </li>
+
+          <li>
+            Justificar decisiones de análisis y mantener trazabilidad.
+          </li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- Equipo docente -->
+      <section class="block">
+
+        <h3>Equipo docente</h3>
+
+        <div class="equipo">
+
+          <div class="persona">
+            <span class="rol">Titular</span>
+            <div class="nombre">Ing. Laura Varela</div>
+            <a
+              class="mail"
+              href="mailto:lauravarela@frba.utn.edu.ar"
+            >
+              lauravarela@frba.utn.edu.ar
+            </a>
+          </div>
+
+          <div class="persona">
+            <span class="rol">Ayudante</span>
+            <div class="nombre">Camila González</div>
+            <a
+              class="mail"
+              href="mailto:camigonzalez@frba.utn.edu.ar"
+            >
+              camigonzalez@frba.utn.edu.ar
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Información de cursada -->
+      <section class="block">
+
+        <h3>Información de cursada</h3>
+
+        <div class="logistica">
+
+          <div class="log-card">
+            <span class="tag">Día y horario</span>
+            <div class="val">Jueves · 19:00–21:30 hs</div>
+          </div>
+
+          <div class="log-card">
+            <span class="tag">Modalidad</span>
+            <div class="val">Zoom / presencial según corresponda</div>
+          </div>
+
+          <div class="log-card">
+            <span class="tag">Canal oficial</span>
+            <div class="val">Campus Virtual</div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Cronograma -->
+      <section class="block">
+
+        <span class="section-tag">Organización</span>
+
+        <h2 class="h">Cronograma</h2>
+
+        <p class="sub">
+          Consultá las clases y fechas generales de la cursada.
+        </p>
+
+        <div class="cronograma">
+
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3m8t2HQ-b2C8_0lq-ZCxVGi7ExoI8eKZFHmobABBrmGEtR_7rWRWDQqNu6iStGHUiHifS5aA96suB/pubhtml?gid=696751097&single=true"
+            title="Cronograma de Ingeniería de Requisitos"
+            loading="lazy">
+          </iframe>
+
+        </div>
+
+        <div class="cal-suscripcion">
+
+          <span>
+            ¿Querés tener estas fechas en tu propio calendario?
+          </span>
+
+          <a
+            class="btn"
+            href="https://calendar.google.com/calendar/u/0?cid=Y19jZDhkMjViNDRjY2E4MTMyYTU3OWE5YzhjNzdiODAzMzMzMjI4ZDA3MWQ1OGZhZWY3NDI3YjQ5ZWFlNzViMzJAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Suscribirme al calendario ↗
+          </a>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTENIDOS
+         ========================================================= -->
+    <section class="panel" id="ejes">
+
+      <span class="section-tag">Contenidos</span>
+
+      <h2 class="h">Los ejes de la materia</h2>
+
+      <p class="sub sub-spaced">
+        El programa aborda el proceso de Ingeniería de Requisitos desde
+        la comprensión del contexto y la elicitación hasta la modelización,
+        especificación, verificación y validación de requisitos.
+      </p>
+
+
+      <div class="ejes">
+
+        <article class="eje-card">
+
+          <h3>Requisitos</h3>
+
+          <ul>
+            <li>Ingeniería de Requisitos como proceso social</li>
+            <li>Requerimiento y requisito</li>
+            <li>Requisitos funcionales y no funcionales</li>
+            <li>Universo del Discurso</li>
+          </ul>
+
+          <div class="biblio">
+            SWEBOK — IEEE · Sommerville · Aurum &amp; Wohlin
+          </div>
+
+        </article>
+
+
+        <article class="eje-card">
+
+          <h3>Elicitación</h3>
+
+          <ul>
+            <li>Fuentes de información</li>
+            <li>Técnicas de recolección de datos</li>
+            <li>Entrevistas</li>
+            <li>Observación y cuestionarios</li>
+          </ul>
+
+          <div class="biblio">
+            Material de la cátedra · Técnicas de elicitación
+          </div>
+
+        </article>
+
+
+        <article class="eje-card">
+
+          <h3>Casos de Uso</h3>
+
+          <ul>
+            <li>Concepto y propósito</li>
+            <li>Actores</li>
+            <li>Inclusión y extensión</li>
+            <li>Generalización</li>
+          </ul>
+
+          <div class="biblio">
+            Fowler — UML Distilled · Bittner &amp; Spence
+          </div>
+
+        </article>
+
+
+        <article class="eje-card">
+
+          <h3>LEL</h3>
+
+          <ul>
+            <li>Definición y símbolos</li>
+            <li>Clasificación</li>
+            <li>Principio de circularidad</li>
+            <li>Principio de vocabulario mínimo</li>
+            <li>Verificación y validación</li>
+          </ul>
+
+          <div class="biblio">
+            Kaplan — Material de la cátedra
+          </div>
+
+        </article>
+
+
+        <article class="eje-card">
+
+          <h3>Escenarios</h3>
+
+          <ul>
+            <li>Concepto y modelo</li>
+            <li>Relación con el LEL</li>
+            <li>Escenarios actuales y futuros</li>
+            <li>Sub-escenarios e integradores</li>
+            <li>Manejo de excepciones</li>
+          </ul>
+
+          <div class="biblio">
+            Hadad · Doorn · Kaplan
+          </div>
+
+        </article>
+
       </div>
-    </div>
-  </div>
 
-  <!-- 6. Cronograma: primero el Sheets, después la suscripción opcional -->
-  <div class="block">
-    <h3>Cronograma</h3>
-    <p class="sub">Consultá acá las clases y las fechas generales de la cursada.</p>
+    </section>
 
-    <div class="cal-embed">
-      <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3m8t2HQ-b2C8_0lq-ZCxVGi7ExoI8eKZFHmobABBrmGEtR_7rWRWDQqNu6iStGHUiHifS5aA96suB/pubhtml?gid=696751097&single=true"
-        width="100%"
-        height="600"
-        frameborder="0"
-        scrolling="no">
-      </iframe>
-    </div>
 
-    <div class="cal-suscripcion">
-      <span class="cal-suscripcion-txt">¿Querés recibir las fechas directamente en tu calendario?</span>
-      <a
-        class="btn"
-        href="https://calendar.google.com/calendar/u/0?cid=Y19jZDhkMjViNDRjY2E4MTMyYTU3OWE5YzhjNzdiODAzMzMzMjI4ZDA3MWQ1OGZhZWY3NDI3YjQ5ZWFlNzViMzJAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ=="
-        target="_blank"
-        rel="noopener">
-        Suscribirme al calendario ↗
-      </a>
-    </div>
-  </div>
+    <!-- =========================================================
+         TP INTEGRADOR
+         ========================================================= -->
+    <section class="panel" id="tp">
 
-  <!-- 8. Nota de evaluación, sin repetir todo (el detalle vive en Calificaciones) -->
-  <div class="block evaluacion-nota">
-    <h3>Entregas y evaluación</h3>
-    <p>
-      Las entregas, trabajos prácticos y actividades de cursada se gestionan a través del
-      <strong>Campus Virtual</strong>. Para el detalle de parciales, recuperatorios y
-      criterios de aprobación, ver la pestaña <strong>Calificaciones</strong>.
-    </p>
-  </div>
+      <span class="section-tag">Trabajo práctico cuatrimestral</span>
 
-  </section>
-  <!-- ⚠️ el </section> de arriba cierra #presentacion.
-       Verificá en tu archivo real que las secciones #ejes, #tp y #calif
-       queden AFUERA de #presentacion (como hermanas, no como hijas). -->
+      <h2 class="h">TP Integrador</h2>
+
+      <div class="tp-hidden-state">
+
+        <span class="em">Próximamente</span>
+
+        <h3>El TP Integrador todavía no está publicado</h3>
+
+        <p>
+          El enunciado, las consignas, las etapas y las fechas se
+          comunicarán a través del Campus Virtual cuando estén disponibles.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CALIFICACIONES
+         ========================================================= -->
+    <section class="panel" id="calif">
+
+      <span class="section-tag">Evaluación</span>
+
+      <h2 class="h">Calificaciones</h2>
+
+      <div class="evaluacion-nota">
+
+        <h3>¿Dónde se gestionan las actividades?</h3>
+
+        <p>
+          La evaluación incluye trabajos prácticos y evaluaciones parciales.
+          Las consignas, entregas y actividades de cursada se gestionan
+          a través del
+          <a
+            href="https://aulasvirtuales.frba.utn.edu.ar/course/view.php?id=29996&section=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Campus Virtual
+          </a>.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <span>
+      Ingeniería de Requisitos K3061 · UTN Facultad Regional Buenos Aires · 2C 2026
+    </span>
+  </footer>
+
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
